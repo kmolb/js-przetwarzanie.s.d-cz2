@@ -1,43 +1,144 @@
-const users = [{
-    _id: '5bc0ed7ea7667514d6bab9e5',
-    name: 'Juanita Christensen',
-    email: 'juanitachristensen@gynk.com'
-}, {
-    _id: '5bc0ed7e6a206238c491a98f',
-    name: 'Jenna Hopkins',
-    email: 'jennahopkins@gynk.com'
-}, {
-    _id: '5bc0ed7e6f8e5500fbf557b9',
-    name: 'Fanny Goodwin',
-    email: 'fannygoodwin@gynk.com'
-}, {
-    _id: '5bc0ed7ead34d79bbe9fc272',
-    name: 'Debbie Woods',
-    email: 'debbiewoods@gynk.com'
-}, {
-    _id: '5bc0ed7e7bb9c994622df2de',
-    name: 'Marietta Hendricks',
-    email: 'mariettahendricks@gynk.com'
-}, {
-    _id: '5bc0ed7e78aa3135a4141efb',
-    name: 'Valarie Mcmahon',
-    email: 'valariemcmahon@gynk.com'
-}];
-
-/*
-function reduce() {
-    let aggregator = ''
-    for (let i = 0; i < users.length; i++) {
-        aggregator += users[i].email + ';';
+const users = [
+    {
+      firstName: "Ross",
+      lastName: "Frazier",
+      age: 24,
+      gender: "male",
+      messages: 22
+    }, {
+      firstName: "Tammie",
+      lastName: "Leach",
+      age: 31,
+      gender: "female",
+      messages: 22
+    }, {
+      firstName: "Kaye",
+      lastName: "Petty",
+      age: 21,
+      gender: "female",
+      messages: 23
+    }, {
+      firstName: "Nielsen",
+      lastName: "Wright",
+      age: 38,
+      gender: "male",
+      messages: 31
+    }, {
+      firstName: "Nannie",
+      lastName: "Moran",
+      age: 33,
+      gender: "female",
+      messages: 22
+    }, {
+      firstName: "Susan",
+      lastName: "Long",
+      age: 30,
+      gender: "female",
+      messages: 40
+    }, {
+      firstName: "Montoya",
+      lastName: "Roberts",
+      age: 40,
+      gender: "male",
+      messages: 30
+    }, {
+      firstName: "Iva",
+      lastName: "Massey",
+      age: 34,
+      gender: "female",
+      messages: 35
+    }, {
+      firstName: "Hodge",
+      lastName: "Fuentes",
+      age: 40,
+      gender: "male",
+      messages: 34
+    }, {
+      firstName: "Dianne",
+      lastName: "Noel",
+      age: 20,
+      gender: "female",
+      messages: 34
+    }, {
+      firstName: "Curry",
+      lastName: "Park",
+      age: 26,
+      gender: "male",
+      messages: 22
+    }, {
+      firstName: "Barbra",
+      lastName: "Warren",
+      age: 37,
+      gender: "female",
+      messages: 24
+    }, {
+      firstName: "Gamble",
+      lastName: "Pope",
+      age: 34,
+      gender: "male",
+      messages: 40
+    }, {
+      firstName: "Perry",
+      lastName: "Garrett",
+      age: 31,
+      gender: "male",
+      messages: 38
+    }, {
+      firstName: "Bass",
+      lastName: "Lynn",
+      age: 24,
+      gender: "male",
+      messages: 36
+    }, {
+      firstName: "Sallie",
+      lastName: "Mccall",
+      age: 22,
+      gender: "female",
+      messages: 40
+    }, {
+      firstName: "Linda",
+      lastName: "Carlson",
+      age: 20,
+      gender: "female",
+      messages: 32
+    }, {
+      firstName: "Adeline",
+      lastName: "Alford",
+      age: 28,
+      gender: "female",
+      messages: 25
+    }, {
+      firstName: "Hammond",
+      lastName: "Rogers",
+      age: 40,
+      gender: "male",
+      messages: 28
+    }, {
+      firstName: "Blackwell",
+      lastName: "Sullivan",
+      age: 36,
+      gender: "male",
+      messages: 38
     }
-    return aggregator;
-}
+  ];
 
-*/
-const newArr = users.reduce((aggregator, current) =>{
-    return aggregator
-    ? aggregator +';' + current.email
-    : current.email;
-}, '');
+const newArr = users.reduce((aggregator, current) => {
+            
+        if(current.gender == 'male')
+         {
+            aggregator.male.push(current);
+        }
+        else if(current.gender == 'female'){
+            aggregator.female.push(current);
+        }
 
-const usersMap2 = users.map( x => x.email).join(';');
+        return aggregator;
+      
+    },  {
+        male: [],
+        female: []
+    });
+
+    console.log(newArr);
+    
+
