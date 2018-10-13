@@ -19,4 +19,9 @@ const users = [{
   }];
 
 
-  
+  users.sort((a, b) =>{
+    return a.lastName.localeCompare(b.lastName) || //|| lub
+     a.firstName.localeCompare(b.firstName);
+
+  });
+  console.log(users);
