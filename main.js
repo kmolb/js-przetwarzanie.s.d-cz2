@@ -4,13 +4,11 @@
 
 
 const arr = [1, 2, 3, 4];
-arr.fe = function (fn) {
-  for (let i = 0; i < this.length; i++) {
-    fn(this[i], i, this);  // this ==arr
+function forEach(arr, fn) {
+  for (let i = 0; i < arr.length; i++) {
+    fn(arr[i]);
   }
 }
 
-arr.fe((x) => console.log(x)); // wskaznikiem jest arr
-let a2 = ["a", "b", "c"]
-a2.fe = arr.fe;
-a2.fe ((x) => console.log(x)); // wskaznikiem jest a2
+forEach(arr, (x) => console.log(x));
+forEach(["a", "b", "c"], (x) => console.log(x));
