@@ -10,16 +10,10 @@ const people = [
     { name: 'Sylwia', age: 25 }
   ];
   
-  people.filter = function (fn) {
-    const arr = [];
+  people.find = function (fn) {
     for (let i = 0; i < this.length; i++) {
-      if (fn(this[i])) {
-        arr.push(this[i]);
+      if (fn(this[i], i, this)) {
+        return this[i];
       }
     }
-    return arr;
   }
-  
-  const people25 = people.filter(person => person.age === 25);
-  
-  people25.forEach(person => console.log(`${person.name} ${person.age}`));
