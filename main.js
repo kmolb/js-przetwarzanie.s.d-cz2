@@ -14,4 +14,4 @@ arr.fi = function (fn) {
     }
 }
 
-arr.fi(x => x > 2);
+let el = arr.fi(x => x > 2);
