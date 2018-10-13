@@ -1,4 +1,4 @@
-// 07 - funkcja filter
+// 07 - funkcja filter  (sprawdza warunek logiczny i zwraca wiele elementow)
 // Tworzy nową tablicę z wszystkimi elementami, które przechodzą test określony w postaci funkcji.
 
 const people = [
@@ -10,10 +10,12 @@ const people = [
     { name: 'Sylwia', age: 25 }
   ];
   
-  people.find = function (fn) {
+  people.filter  = function (fn) {
+    const newArr = [];  //deklaracja nowej tablicy
     for (let i = 0; i < this.length; i++) {
       if (fn(this[i], i, this)) {
-        return this[i];
+        newArr.push (this[i]);
       }
     }
+    return newArr; // zwracamy nowa tablece z wynikami
   }
